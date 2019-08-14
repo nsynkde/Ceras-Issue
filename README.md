@@ -6,4 +6,4 @@ becomes too large.
 
 This repository is here to depict that issue with an example.
 
-**[Issue over the Ceras repository](https://github.com/rikimaru0345/Ceras/issues/62)**
+**[Issue over at the Ceras repository](https://github.com/rikimaru0345/Ceras/issues/62)**
