@@ -9,19 +9,18 @@ namespace CerasDictionaryIssue
 {
     class Program
     {
-        static void TryWithCount(int count)
+        static void TryWithCount(int boolCount, int floatCount)
         {
             var serializer = new CerasSerializer();
             var deserializer = new CerasSerializer();
 
             var dict = new Dictionary<string, object>();
-            bool[] boolArray = new bool[count];
-            float[] floatArray = new float[count];
-            for (int i = 0; i < count; i++)
-            {
+            bool[] boolArray = new bool[boolCount];
+            float[] floatArray = new float[floatCount];
+            for (int i = 0; i < boolCount; i++)
                 boolArray[i] = i % 2 == 0 ? false : true;
-                floatArray[i] = (float)i * 10000f;
-            }
+            for (int i = 0; i < floatCount; i++)
+                floatArray[i] = (float)i * 10000.0f;
 
             dict.Add("Booleans", boolArray);
             dict.Add("Floats", floatArray);
@@ -36,8 +35,10 @@ namespace CerasDictionaryIssue
 
         static void Main(string[] args)
         {
-            TryWithCount(30);
-            TryWithCount(60);
+            TryWithCount(30, 30);
+            TryWithCount(30, 200);
+            TryWithCount(40, 120);
+            TryWithCount(60, 120);
         }
     }
 }
